@@ -1,0 +1,10 @@
+import math
+
+for i in range(int(1000 / 3)):
+    for j in range(int(1000 / 2)):
+        c = math.sqrt(i**2 + j**2)
+        if(i + j + c == 1000):
+            print("a: ", i)
+            print("b: ", j)
+            print("c: ", int(c))
+            quit()

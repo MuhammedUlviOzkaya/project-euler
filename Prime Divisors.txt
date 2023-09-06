@@ -1,0 +1,34 @@
+public static void primeDivisors(int number){
+        int controller = number;
+        for(int i = 2; i <= number; i++){
+            int counter = 0;
+            while(controller % i == 0){
+                controller /= i;
+                counter++;
+            }
+            if(counter != 0){
+                System.out.print(i+"^"+counter+" ");
+            }
+        }
+    }
+
+
+
+// storing 'em with array list
+
+public static void primeDivisors(int number){
+        int controller = number;
+        ArrayList<String> primes = new ArrayList<String>();
+        for(int i = 2; i <= number; i++){
+            int counter = 0;
+            while(controller % i == 0){
+                controller /= i;
+                counter++;
+            }
+            if(counter != 0){
+                String element = i + "^" + counter + " ";
+                primes.add(element);
+            }
+        }
+        System.out.println(primes);
+    }

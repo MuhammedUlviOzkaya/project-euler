@@ -1,0 +1,19 @@
+def chain(num):
+    chainCounter = 1
+    while(num != 1):
+        if num % 2 == 0:
+            num /= 2
+        else:
+            num = num * 3 + 1
+        chainCounter += 1
+
+    return chainCounter
+
+max = 0
+maxIndex = 0
+for i in range(1, 1000000):
+    if chain(i) > max:
+        max = chain(i)
+        maxIndex = i
+
+print(maxIndex)

@@ -1,0 +1,18 @@
+def divisorCounter(num):
+    if(num == 1):
+        return 1
+    controller = num
+    divisors = 1
+    isDivisible = 0
+    for i in range(2, int(num / 2 + 1):
+        counter = 0
+        while(controller % i == 0):
+            controller /= i
+            counter += 1
+            isDivisible += 1
+
+        divisors *= (counter + 1)
+    if(isDivisible == 0):
+        return 2
+
+    return divisors

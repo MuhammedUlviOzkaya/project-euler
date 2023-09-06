@@ -1,0 +1,8 @@
+def paralellogram(total):
+    if total % 2 != 0:
+        print("Paralellogram width must be an even number.")
+    else:
+        for i in range(int(total / 2)):
+            print(" " * (int((total / 2 - 1) - i)), "/", " " * 2 * i, "\\", sep="")
+        for i in range(int(total / 2)):
+            print(" " * i, "\\", " " * (int(total / 2 - 1) - i) * 2, "/", sep="")

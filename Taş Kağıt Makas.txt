@@ -1,0 +1,134 @@
+import random
+import time
+
+def countDown():
+    print(3)
+    time.sleep(1)
+    print(2)
+    time.sleep(1)
+    print(1)
+    time.sleep(1)
+
+liste = ["Taş", "Kağıt", "Makas"]
+
+while True:
+    name = input("İsim: ")
+    while True:
+        limit = input("Final Kaçta Olsun: ")
+        if limit.isdigit() == False:
+            print("Yanlış Giriş!")
+            input()
+        else:
+            break
+    gamerSkor = 0
+    pcSkor = 0
+    flag = False
+    print("\n\nOYUN BAŞLADI!\n\n")
+    while True:
+
+        print("------ SKOR ------")
+        print(name, gamerSkor,"-", pcSkor, "Robot")
+        print("""
+        |1| - Taş
+        |2| - Kağıt
+        |3| - Makas 
+        
+        """)
+        secim = input()
+
+        randIndex = random.randint(0, 2)
+        pcSecim = liste[randIndex]
+
+        if secim == '1':
+            countDown()
+            if pcSecim == "Taş":
+                print("Berabere!")
+                input("Devam Etmek İçin Enter..")
+
+            elif pcSecim == "Kağıt":
+                print("Robot: Kağıt")
+                pcSkor += 1
+                print("Round'u kazanan: Robot")
+                input("Devam Etmek İçin Enter..")
+            elif pcSecim == "Makas":
+                print("Robot: Makas")
+                gamerSkor += 1
+                print("Round'u kazanan:", name)
+                input("Devam Etmek İçin Enter..")
+        elif secim == '2':
+            countDown()
+            if pcSecim == "Taş":
+                print("Robot: Taş")
+                gamerSkor += 1
+                print("Round'u kazanan:", name)
+                input("Devam Etmek İçin Enter..")
+            elif pcSecim == "Kağıt":
+                print("Berabere!")
+                input("Devam Etmek İçin Enter..")
+            elif pcSecim == "Makas":
+                print("Robot: Makas")
+                pcSkor += 1
+                print("Round'u kazanan: Robot")
+                input("Devam Etmek İçin Enter..")
+        elif secim == '3':
+            countDown()
+            if pcSecim == "Taş":
+                print("Robot: Taş")
+                pcSkor += 1
+                print("Round'u kazanan: Robot")
+                input("Devam Etmek İçin Enter..")
+            elif pcSecim == "Kağıt":
+                print("Robot: Kağıt")
+                gamerSkor += 1
+                print("Round'u kazanan:", name)
+                input("Devam Etmek İçin Enter..")
+            elif pcSecim == "Makas":
+                print("Berabere!")
+                input("Devam Etmek İçin Enter..")
+        else:
+            print("Yanlış Giriş!")
+            input()
+        if pcSkor == limit:
+            print("OYUN BİTTİ!\nKAZANAN: Robot!")
+            while True:
+                print("""
+                |1| - Yeniden Oyna
+                |2| - Çıkış
+                
+                """)
+                sonSecim = input()
+                if sonSecim == "1":
+                    flag = True
+                    break
+
+                elif sonSecim == "2":
+                    print("Çıkış Yapıldı..")
+                    quit()
+                else:
+                    print("Yanlış Giriş!")
+                    input()
+        if flag == True:
+            break
+
+
+        elif gamerSkor == limit:
+            print("\n\n\n\n\nOYUN BİTTİ!\nKAZANAN:", name)
+            while True:
+                print("""
+                |1| - Yeniden Oyna
+                |2| - Çıkış
+        
+                """)
+                sonSecim = input()
+                if sonSecim == "1":
+                    flag = True
+                    break
+
+                elif sonSecim == "2":
+                    print("Çıkış Yapıldı..")
+                    quit()
+                else:
+                    print("Yanlış Giriş!")
+                    input()
+        if flag == True:
+            break
